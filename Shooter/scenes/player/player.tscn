@@ -17,12 +17,24 @@ texture = ExtResource("1_okw7n")
 shape = SubResource("CircleShape2D_oig34")
 
 [node name="LaserTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.5
 one_shot = true
 
 [node name="GrenadeTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 2.0
 one_shot = true
+
+[node name="LaserStartPositions" type="Node2D" parent="."]
+position = Vector2(76, -56)
+
+[node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(-58, -73)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(-51, -71)
+
+[node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(-64, -71)
 
 [connection signal="grenade" from="." to="." method="_on_grenade"]
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
