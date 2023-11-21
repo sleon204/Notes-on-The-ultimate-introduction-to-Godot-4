@@ -3,7 +3,7 @@ extends CharacterBody2D
 var can_laser: bool = true
 var can_grenade: bool = true
 signal laser(pos)
-signal grenade
+signal grenade(pos)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -24,9 +24,11 @@ func _process(_delta):
 		
 	# secondary action
 	if Input.is_action_pressed("secondary_action") and can_grenade:
+		var grenade_marker = $LaserStartPositions.get_children()
+		var selected_grenade = grenade_marker[0]
 		can_grenade = false
 		$GrenadeTimer.start()
-		grenade.emit()
+		grenade.emit(selected_grenade.global_position)
 
 func _on_laser_timer_timeout():	
 	can_laser = true
