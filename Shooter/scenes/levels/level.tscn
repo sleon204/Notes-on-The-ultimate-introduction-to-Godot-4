@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://6ddy4tbi33vm"]
+[gd_scene load_steps=18 format=3 uid="uid://6ddy4tbi33vm"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_piari"]
 [ext_resource type="Texture2D" uid="uid://8dxnet1flhb8" path="res://graphics/ground/stones.png" id="2_6ylku"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://nyjxmcklditc" path="res://graphics/decals/moss/moss_5.png" id="8_fuv0h"]
 [ext_resource type="Texture2D" uid="uid://bpie58j7n0pbt" path="res://graphics/tilesets/outside_walls.png" id="9_sxm7r"]
 [ext_resource type="Texture2D" uid="uid://cvaatvil1yl1g" path="res://graphics/tilesets/soil.png" id="10_ijw8m"]
+[ext_resource type="PackedScene" uid="uid://yv750xnm1h5t" path="res://scenes/objects/steam_vent.tscn" id="12_oqdq2"]
 [ext_resource type="PackedScene" uid="uid://b563jo45boxfx" path="res://scenes/houses/house.tscn" id="13_yd7ae"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rtv50"]
@@ -100,7 +101,11 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 
+[node name="SteamVent" parent="Gound" instance=ExtResource("12_oqdq2")]
+position = Vector2(100, 500)
+
 [node name="Gate" parent="." instance=ExtResource("2_ox0sy")]
+position = Vector2(35, 65)
 
 [node name="Player" parent="." instance=ExtResource("4_fjwgh")]
 position = Vector2(709, 499)
